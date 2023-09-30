@@ -1,21 +1,17 @@
-import { FC, ReactNode } from "react";
-import "./styles.css";
+import { FC } from "react";
+import "./preview.styles.css";
 
-interface Props {
-  children?: ReactNode;
-}
-
-const Timer: FC<Props> = () => {
+const Preview: FC = () => {
   return (
-    <div className="container">
-      <div className="header">
-        <div className="system">
+    <div className="preview">
+      <div className="preview__header preview-header">
+        <div className="preview-header__system">
           <button className="close"></button>
           <button className="minimize"></button>
           <button className="maximize"></button>
         </div>
 
-        <div className="toolbar">
+        <div className="preview-header__toolbar">
           <button>
             <svg viewBox="0 0 24 24">
               <path d="M1,12V8h5l6-5v18l-6-5H1V12 M20,12c0-2.76-2.24-5-5-5v2c1.65,0,3,1.35,3,3s-1.35,3-3,3v2C17.76,17,20,14.76,20,12z" />
@@ -34,7 +30,7 @@ const Timer: FC<Props> = () => {
         </div>
       </div>
 
-      <div className="body">
+      <div className="preview__body">
         <div className="status">Focus</div>
         <div className="timer">23:45</div>
         <div className="actions">
@@ -43,11 +39,11 @@ const Timer: FC<Props> = () => {
         </div>
       </div>
 
-      <div className="footer">
+      <div className="preview__footer">
         <div className="status-line"></div>
       </div>
     </div>
   );
 };
 
-export default Timer;
+export default Preview;

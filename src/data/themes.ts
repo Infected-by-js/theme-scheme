@@ -17,10 +17,10 @@ type ThemeStorage = { [name in ThemeName]: Theme };
 
 export const themeStorage: ThemeStorage = {
   night_owl: {
-    primary: " #feac00",
-    secondary: " #d8dbdf",
+    primary: "#feac00",
+    secondary: "#d8dbdf",
     accent: "#59418d",
-    background: " #061626",
+    background: "#061626",
   },
 
   monokai: {
@@ -37,3 +37,10 @@ export const themeStorage: ThemeStorage = {
     background: "#1A1B26",
   },
 };
+
+export interface Theme {
+  accent: string;
+  primary: string;
+  secondary: string;
+  background: string;
+}

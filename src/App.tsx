@@ -1,8 +1,7 @@
+import { THEME_NAMES, ThemeName, themeStorage } from "@/data/themes";
+
+import { Preview, ThemeForm, ThemeToolbar } from "@/widgets";
 import { useEffect, useState } from "react";
-import "./App.css";
-import { THEME_NAMES, ThemeName, themeStorage } from "./themes";
-import ThemeMaker from "./ui/theme-maker/theme-maker";
-import Timer from "./ui/timer/timer";
 
 const setThemeSchema = (themeName: ThemeName) => {
   const root = document.querySelector(":root") as HTMLElement;
@@ -28,32 +27,16 @@ function App() {
 
   return (
     <>
-      <div className="btns">
-        <button
-          onClick={() => onSetTheme("night_owl")}
-          className={`btn ${theme === "night_owl" ? "active" : ""}`}
-        >
-          Night owl
-        </button>
-        <button
-          onClick={() => onSetTheme("monokai")}
-          className={`btn ${theme === "monokai" ? "active" : ""}`}
-        >
-          Monokai
-        </button>
-        <button
-          onClick={() => onSetTheme("tokyo_night")}
-          className={`btn ${theme === "tokyo_night" ? "active" : ""}`}
-        >
-          Tokyo night
-        </button>
-      </div>
+      <ThemeToolbar theme={theme} onSetTheme={onSetTheme} />
 
-      <Timer />
+      <Preview />
 
       <div style={{ margin: "0 1rem" }}></div>
 
-      <ThemeMaker theme={themeStorage[theme]} />
+      <ThemeForm
+        theme={themeStorage[theme]}
+        onSaveTheme={(name, theme) => console.log(name, theme)}
+      />
     </>
   );
 }
