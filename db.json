@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "theme": "tokyo_night",
+      "themes": [
+        "tokyo_night",
+        "monokai",
+        "night_owl"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ann",
+      "theme": "night_owl",
+      "themes": [
+        "monokai",
+        "night_owl"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "night_owl",
+      "title": "Night Owl",
+      "owner": null,
+      "color_schema": {
+        "primary": "#feac00",
+        "secondary": "#d8dbdf",
+        "accent": "#59418d",
+        "background": "#061626"
+      }
+    },
+    {
+      "id": "tokyo_night",
+      "title": "Tokyo Night",
+      "owner": null,
+      "color_schema": {
+        "primary": "#70A6FF",
+        "secondary": "#C0CAF5",
+        "accent": "#BF91F3",
+        "background": "#1A1B26"
+      }
+    },
+    {
+      "id": "monokai",
+      "title": "Monokai",
+      "owner": "2",
+      "color_schema": {
+        "primary": "#F92672",
+        "secondary": "#66D9EF",
+        "accent": "#A6E22E",
+        "background": "#272822"
+      }
+    },
+    {
+      "id": "in_a_trance",
+      "title": "In a Transe",
+      "owner": "1",
+      "color_schema": {
+        "primary": "#C45F90",
+        "secondary": "#D691A0",
+        "accent": "#4D4C60",
+        "background": "#FADCDC"
+      }
+    },
+    {
+      "title": "Red wine",
+      "color_schema": {
+        "primary": "#ffffff",
+        "secondary": "#753333",
+        "accent": "#ae849a",
+        "background": "#3d0000"
+      },
+      "owner": "1",
+      "id": "red_wine6d0737da-42c1-4d8b-b4de-12238958d3c7"
+    }
+  ]
+}

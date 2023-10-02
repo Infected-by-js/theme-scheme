@@ -13,6 +13,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+    --color-background: #d9e4ec;
+    --color-accent: #b7cfdc;
+    --color-secondary: #6aabd2;
+    --color-primary: #385e72;
 }
 
 * {
@@ -49,12 +53,8 @@ h1 {
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  height:100vh;
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

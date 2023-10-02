@@ -1,15 +1,16 @@
-import { Theme } from "@/data/themes";
-import { Button, ColorInput } from "@/shared/components";
+import { applyColorSchema } from "@/contexts/theme/helpers";
+import { ColorSchema } from "@/types";
+import { Button, ColorInput } from "@/ui/atoms";
 import { FC, useEffect, useState } from "react";
 import "./theme-form.styles.css";
 
 interface Props {
-  theme: Theme;
-  onSaveTheme: (name: string, theme: Theme) => void;
+  schema: ColorSchema;
+  onSaveTheme: (name: string, theme: ColorSchema) => void;
 }
 
-const ThemeForm: FC<Props> = ({ theme, onSaveTheme }) => {
-  const [colors, setColors] = useState(theme);
+const ThemeForm: FC<Props> = ({ schema, onSaveTheme }) => {
+  const [colors, setColors] = useState(schema);
   const [themeName, setThemeName] = useState("My Theme");
 
   const [isUnsaved, setIsUnsaved] = useState(false);
@@ -20,6 +21,7 @@ const ThemeForm: FC<Props> = ({ theme, onSaveTheme }) => {
       [name]: color,
     }));
 
+    applyColorSchema(colors);
     setIsUnsaved(true);
   };
 
@@ -31,9 +33,9 @@ const ThemeForm: FC<Props> = ({ theme, onSaveTheme }) => {
   };
 
   useEffect(() => {
-    setColors(theme);
+    setColors(schema);
     setIsUnsaved(false);
-  }, [theme]);
+  }, [schema]);
 
   return (
     <div className="theme-form">
@@ -47,17 +49,14 @@ const ThemeForm: FC<Props> = ({ theme, onSaveTheme }) => {
         ))}
       </div>
 
-      <form
-        className="theme-form__form form"
-        onSubmit={handleSaveTheme}
-        style={{ opacity: isUnsaved ? "1" : "0" }}
-      >
+      <form className="theme-form__form form" onSubmit={handleSaveTheme}>
         <input
           className="form__input"
           type="text"
           placeholder="Enter Theme Name"
           value={themeName}
           onChange={(e) => setThemeName(e.target.value)}
+          disabled={!isUnsaved}
         />
 
         <Button disabled={!isUnsaved} type="submit" style={{ width: "100%" }}>

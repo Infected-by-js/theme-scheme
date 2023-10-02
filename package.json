@@ -4,10 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
+    "db": "json-server --watch db.json",
+    "serve": "concurrently \"yarn dev\" \"yarn db\"",
     "build": "tsc && vite build"
   },
   "dependencies": {
+    "json-server": "^0.17.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -19,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "concurrently": "^8.2.1",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

@@ -7,8 +7,13 @@
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all ease 0.25s;
   color: white;
+}
+
+.btn svg {
+  width: 100%;
+  height: 100%;
 }
 
 .btn.active {
@@ -26,4 +31,8 @@
 
 .btn:disabled {
   background-color: #3d3c3c;
+}
+.btn:disabled:hover {
+  cursor: auto;
+  border-color: transparent;
 }
