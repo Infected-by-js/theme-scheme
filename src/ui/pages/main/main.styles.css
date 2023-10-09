@@ -30,3 +30,9 @@
   justify-content: center;
   flex: 1;
 }
+
+.content__preview {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}

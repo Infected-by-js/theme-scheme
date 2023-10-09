@@ -1,7 +1,7 @@
 import { useTheme } from "@/contexts/theme";
 import { useUser } from "@/contexts/user";
 import { ColorSchema, Theme } from "@/types";
-import { Preview, ThemeForm, ThemeToolbar } from "@/ui/molecules";
+import { Preview, PreviewMenu, ThemeForm, ThemeToolbar } from "@/ui/molecules";
 import { useEffect } from "react";
 import "./main.styles.css";
 
@@ -59,7 +59,10 @@ const MainPage = () => {
       </div>
 
       <div className="content">
-        <Preview />
+        <div className="content__preview">
+          <Preview />
+          <PreviewMenu />
+        </div>
       </div>
     </div>
   );

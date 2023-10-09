@@ -75,6 +75,17 @@
       },
       "owner": "1",
       "id": "red_wine6d0737da-42c1-4d8b-b4de-12238958d3c7"
+    },
+    {
+      "title": "My Theme2",
+      "color_schema": {
+        "primary": "#70addb",
+        "secondary": "#6d6464",
+        "accent": "#7649bb",
+        "background": "#1f212e"
+      },
+      "owner": "1",
+      "id": "my_theme2009747ee-39d8-4691-af25-e82d56f32ef3"
     }
   ]
 }
